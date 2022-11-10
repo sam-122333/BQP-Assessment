@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 //component
 import ListCartItem from "./ListCartItem";
 
+const getLocalStorage = () => {
+  return JSON.parse(localStorage.getItem("list"));
+};
 const ListCart = () => {
   const [itemChange, setItemChange] = useState("");
-  const [item, setItem] = useState([]);
+  const [item, setItem] = useState(getLocalStorage());
   const itemEvent = (event) => {
     setItemChange(event.target.value);
   };
@@ -28,6 +31,9 @@ const ListCart = () => {
       });
     });
   };
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(item));
+  }, [item]);
 
   return (
     <>

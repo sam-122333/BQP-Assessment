@@ -45,7 +45,7 @@ nav ul li img {
 
 /* classes */
 .liClass:hover {
-  background-color: grey;
+  background-color: rgb(255, 208, 208);
 }
 .cart {
   width: 70%;
