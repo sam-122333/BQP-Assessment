@@ -9,13 +9,8 @@ function ListCartItem(props) {
                 {item}
               </div>
               <div style={{ width: "20%", float: "left", margin: "10px 0" }}>
-                <input
-                  type="checkbox"
-                  id="vehicle1"
-                  name="vehicle1"
-                  value="Bike"
-                />
-                <label htmlFor="vehicle1"> Mark as done</label>
+                <input type="checkbox" id={item} name="sam2" value="Bike" />
+                <label htmlFor={item}> Mark as done</label>
               </div>
               <div style={{ width: "20%", float: "left", margin: "10px 0" }}>
                 <button

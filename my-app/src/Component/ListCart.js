@@ -9,9 +9,14 @@ const ListCart = () => {
     setItemChange(event.target.value);
   };
   const addItemEvent = () => {
-    setItem((items) => {
-      return [...items, itemChange];
-    });
+    if (itemChange === "") {
+      alert("enter some text");
+    } else {
+      setItem((items) => {
+        return [...items, itemChange];
+      });
+    }
+
     setItemChange("");
     console.log(itemChange);
   };
@@ -34,14 +39,14 @@ const ListCart = () => {
               marginBottom: "30px",
             }}
           >
-            My titles
+            To Do List
           </h1>
           <div style={{ textAlign: "center" }}>
             <input
               type="text"
               placeholder="Enter some text here..."
               style={{
-                height: "25px",
+                height: "30px",
                 width: "60%",
                 borderRadius: "5px",
                 marginRight: "20px",
@@ -51,7 +56,7 @@ const ListCart = () => {
             />
             <button
               onClick={addItemEvent}
-              style={{ height: "26px", width: "50px", borderRadius: "5px" }}
+              style={{ height: "30px", width: "50px", borderRadius: "5px" }}
             >
               Add
             </button>
